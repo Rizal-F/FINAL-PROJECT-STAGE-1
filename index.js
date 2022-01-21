@@ -268,6 +268,8 @@ app.get ('/blog-detail/:id', function(request, response){
 
             let data = result.rows[0]
 
+            
+
             response.render("blog-detail", {id:id, blog: data, user: request.session.user, isLogin: request.session.isLogin})
     
         })
@@ -328,13 +330,13 @@ app.get ('/edit-news/:id', function(request, response){
     
 })
 
-app.post('/edit-news/:id', function(request, response) {
+app.post('/edit-news/:id', upload.single('inputImage'), function(request, response) {
 
     let id = request.params.id
-
+    let image = request.file.filename
     let data = request.body
 
-    let query = `UPDATE tb_blog SET title= '${data.updateTitle}', content= '${data.updateContent}' WHERE id= ${id}`
+    let query = `UPDATE tb_blog SET title= '${data.updateTitle}', content= '${data.updateContent}', image='${image}' WHERE id= ${id}`
 
     db.connect(function(err, client, done){
         if (err) throw err
