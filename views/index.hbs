@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <link rel="icon" href="../public/assets/img/logo-paudqu.png">
+        <title>PAUDQU SALSABILA</title>
+        
+        <link rel="stylesheet" href="../public/assets/css/style.css">
+    </head>
+    <body>
+        <!-- awal nav -->
+        <nav>
+        <div class="navAll">        
+            <div class="left">
+                <a href="/"><img src="../public/assets/img/logo-paudqu.png" style="width: 50px;" alt="logo"></a>
+                <ul>
+                    <li ><a href="/" class="home">Home</a></li>
+                    <li><a href="/blog" class="blog">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                {{#if isLogin}}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <span class="home">Hallo, {{user.name}}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="blog" href="/logout">Logout</a>
+                    </li>
+                </ul>
+              {{else}}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="blog" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="home" href="/login">Login</a>
+                  </li>
+                </ul>
+              {{/if}}           
+            </div>
+            <div class="right">
+                <a class="contact-me" href="/contact">Contact Me</a>
+            </div>
+        </div>
+        </nav>
+        <!-- akhir nav -->
+        <!-- awal content -->
+
+        <div class="container">
+            <div class="section">
+                <div class="left">
+                    <div class="card">
+                        <div>
+                            <img style="border-radius: 25px;" src="../public/assets/img/profiil.jpg" width="100%"/>
+                        </div>
+                            <br />
+                        <h2>PAUD-QU SALSABILA</h2> 
+                            <br />
+                        <p style="color: grey;">
+                            Address : Jl. H. Encep Nawawi No.27, RT.02/RW.11, Bubulak, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16115
+                        </p>
+                            <br />
+                        <table border="1" cellpadding="100px">
+                            <tr class="colom_utama">
+                                <th>Prestasi</th>
+                                <th>Tahun</th>
+                            </tr>
+                            {{#each table}}
+                            <tr>
+                                <td>{{this.prestasi}}</td>
+                                <td>{{this.tahun}}</td>
+                            </tr>
+                           {{/each}}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h1>Tentang PAUD-QU SALSABILA</h1><br />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Saepe repudiandae inventore unde ex quidem nemo voluptatum maxime, 
+                        sint similique eveniet nulla deleniti quasi facere, accusamus voluptates soluta, 
+                        tenetur sunt illum!</p>
+                        <br />
+                    
+                    <div class="skill-section">  
+                        <div>
+                            <img src="../public/assets/img/ibadah.png" style="width: 75px;" alt="logo"><br /><br />
+                            <h4>Ibadah</h4><br />
+                            <p>Sentra bahan alam adalah tujuan untuk memberikan pengalaman 
+                                pada anak untuk bereksplorasi dengan berbagai materi.</p>
+                        </div>
+                        <div>
+                            <img src="../public/assets/img/alam.jpg" style="width: 50px;" alt="logo"><br /><br />
+                            <h4>Alam</h4><br />
+                            <p>Sentra bahan alam adalah tujuan untuk memberikan pengalaman 
+                                pada anak untuk bereksplorasi dengan berbagai materi. </p> 
+                        </div>
+                        <div>
+                            <img src="../public/assets/img/kreatif.png" style="width: 50px;" alt="logo"><br /><br />
+                            <h4>Kreatif</h4><br />
+                            <p>Sentra seni atau pusat kegiatan seni merupakan tempat untuk menumbuh kembangkan 
+                                kreativitas, imajinasi, inisiatif, dan rasa keindahan anak.</p> 
+                        </div>
+                    </div>
+                    <br>
+                    <h2>Found Us on</h2><br>
+              
+                    <div class="sosmed">
+                        <ul>
+                            <li><a href="https://www.facebook.com/">
+                                <img src="../public/assets/img/FB.png" alt="FB"></a></li>
+                            <li><a href="https://twitter.com/">
+                                <img src="../public/assets/img/TWIT.png" alt="twitter"></a></li>
+                            <li><a href="https://www.instagram.com/">
+                                <img src="../public/assets/img/IG.png" alt="IG"></a></li>
+                            <li><a href="https://www.google.com/gmail/">
+                                <img src="../public/assets/img/G+.png" alt="gmail"></a></li>
+                            <li><a href="https://www.whatsapp.com/">
+                                <img src="../public/assets/img/WA.png" alt="WA"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- akhir content -->
+    </body>
+</html>
