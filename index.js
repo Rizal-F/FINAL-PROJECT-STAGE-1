@@ -268,9 +268,15 @@ app.get ('/blog-detail/:id', function(request, response){
 
             let data = result.rows[0]
 
-            
+            let dataNews = { //map untuk mapping data yang ada di array penampung value
+                 
+                    ...data,
 
-            response.render("blog-detail", {id:id, blog: data, user: request.session.user, isLogin: request.session.isLogin})
+                    postFullTime: getFullTime(data.post_at) 
+                     //properti postAt dan distance mengambil value dari parameter filed dari database dan dimasukkan kedalam fungsi
+                }
+
+            response.render("blog-detail", {id:id, blog: dataNews, user: request.session.user, isLogin: request.session.isLogin})
     
         })
         
